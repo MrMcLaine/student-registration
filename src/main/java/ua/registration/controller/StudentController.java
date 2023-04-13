@@ -42,6 +42,8 @@ public class StudentController {
             student.setFile(fileMultipart);
             studentService.save(student);
             req.setAttribute("mode", "S_SUCCESS");
+            /*req.setAttribute("id", student.getId());*/
+            req.setAttribute("savedStudent", student);
         } catch (Exception e) {
             req.setAttribute("mode", "S_ERROR");
         }

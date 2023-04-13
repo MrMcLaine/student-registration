@@ -12,13 +12,12 @@
     <script
             src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/success.css">
 </head>
 <body>
 
 <c:choose>
     <c:when test="${mode == 'S_SUCCESS'}">
-        <div id='card' class="animated fadeIn">
+        <%--<div id='card' class="animated fadeIn">
             <div id='upper-side'> <?xml version="1.0" encoding="utf-8"?>
                 <!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --> <!DOCTYPE
                 PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -29,7 +28,57 @@
                             cy="104.353" r="32.53"/> </svg>
                 <h3 id='status'> Success </h3></div>
             <div id='lower-side'><p id='message'> Congratulations, your account has been successfully created. </p> <a
-                    href="/" id="contBtn">Continue</a></div>
+                <a href="index" id="contBtn">Continue</a>
+
+            </div>--%>
+<%--
+        <c:if test="${savedStudent != null}">
+            <p>Student ID: ${savedStudent.id}</p>
+            <p>Name: ${savedStudent.firstName} ${savedStudent.lastName}</p>
+            <p>Age: ${savedStudent.age}</p>
+            <p>Email: ${savedStudent.email}</p>
+            <img src="${multipartService.getFileUrl(savedStudent.file.id)}" alt="Uploaded photo">
+        </c:if>
+--%>
+
+        <div class="container cabinet mt-5">
+
+            <div class="row d-flex justify-content-center">
+
+                <div class="col-md-7">
+
+                    <div class="card p-3 py-4">
+
+                        <div class="text-center">
+
+<%--
+                            <img src="<c:url value="/${multipartService.getFile(savedStudent.file.id)}" />" alt="Uploaded photo" width="100" class="rounded-circle">
+--%>
+
+                        </div>
+
+                        <div class="text-center mt-3">
+                            <span class="bg-secondary p-1 px-4 rounded text-white">Student_ID - ${savedStudent.id}</span>
+                            <h5 class="mt-2 mb-0">${savedStudent.firstName} ${savedStudent.lastName}</h5>
+                            <span>Age: ${savedStudent.age}</span>
+
+                            <span>Email: ${savedStudent.email}</span>
+
+                            <ul class="social-list">
+                                <li><i class="fa fa-facebook"></i></li>
+                                <li><i class="fa fa-dribbble"></i></li>
+                                <li><i class="fa fa-instagram"></i></li>
+                                <li><i class="fa fa-linkedin"></i></li>
+                                <li><i class="fa fa-google"></i></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
     </c:when>
 
@@ -102,10 +151,12 @@
 
                                 <div class="form-group">
 
-                                    <input type="file" name="file" id="file" class="form-control input-sm customFileInput" />
+                                    <input type="file" name="file" id="file"
+                                           class="form-control input-sm customFileInput"/>
                                 </div>
 
-                                <input type="submit" value="Register" class="btn btn-info btn-block" placeholder="Upload your photo">
+                                <input type="submit" value="Register" class="btn btn-info btn-block"
+                                       placeholder="Upload your photo">
 
                             </form>
                         </div>
