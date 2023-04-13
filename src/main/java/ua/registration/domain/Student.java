@@ -26,6 +26,10 @@ public class Student {
     @Column(nullable = false)
     private String password;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "file_id", referencedColumnName = "id")
+    private FileMultipart file;
+
     public Student(String firstName, String lastName, Integer age, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
