@@ -58,7 +58,7 @@
                             <h3 class="panel-title">Please fill this form</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form" action="save" method="post">
+                            <form role="form" action="save" method="post" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-xs-6 col-sm-6 col-md-6">
                                         <div class="form-group">
@@ -100,7 +100,12 @@
                                     </div>
                                 </div>
 
-                                <input type="submit" value="Register" class="btn btn-info btn-block">
+                                <div class="form-group">
+
+                                    <input type="file" name="file" id="file" class="form-control input-sm customFileInput" />
+                                </div>
+
+                                <input type="submit" value="Register" class="btn btn-info btn-block" placeholder="Upload your photo">
 
                             </form>
                         </div>
