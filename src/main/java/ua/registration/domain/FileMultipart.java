@@ -19,14 +19,10 @@ public class FileMultipart {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
+    @Column(name = "file_name")
     private String fileName;
-    private String fileType;
+    @Column(name = "file_type")
+    private String contentType;
     @Lob
     private byte[] data;
-
-    public FileMultipart(String fileName, String fileType, byte[] data) {
-        this.fileName = fileName;
-        this.fileType = fileType;
-        this.data = data;
-    }
 }

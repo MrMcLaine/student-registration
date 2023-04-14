@@ -105,3 +105,13 @@ body{
     color:#fff;
     height:40px;
 }
+
+.image{
+    background-size: contain;
+    width: 100px;
+    border-radius: 50px;
+}
+
+.info{
+    margin: 0 auto;
+}
